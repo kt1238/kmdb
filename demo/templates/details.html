@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+
+{% block title %}Details{% endblock %}
+
+{% block content%}
+    <h2 class="text-center">{{movie.name}} ({{movie.release_year|default:"Year Not Found"}})</h2>
+    <img src="" alt="Movie poster" class="mx-auto d-block w-50 img-thumbnail">
+    <p class="text-center">
+    Language: {{movie.language}} <br>
+    Genres: {{movie.genre_1|default:"No genres found"}} <br>
+    Watched: {{movie.watched}} <br>
+    Priority: {{movie.priority}} <br>
+    Extra Information: {{movie.extra_info|default:"No extra information found"}} <br>
+    </p>
+{% endblock %}

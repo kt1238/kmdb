@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block content%}
+    <h2>You searched for {{search_term}}</h2>
+    <table class="table table-hover">
+        <tr>
+            <th>Movie ID</th>
+            <th>Name</th>
+            <th>Release Year</th>
+            <th>Language</th>
+            <th>Genre</th>
+            <th>Watched</th>
+            <th>Priority</th>
+            <th>Extra Info</th>
+        </tr>
+        {% for record in result%}
+        <tr>
+            <td>{{record.movie_id}}</td>
+            <td><a href="{% url 'details' record.movie_id %}">{{record.name}}</a></td>
+            <td>{{record.release_year}}</td>
+            <td>{{record.language}}</td>
+            <td>{{record.genre_1}}</td>
+            <td>{{record.watched}}</td>
+            <td>{{record.priority}}</td>
+            <td>{{record.extra_info}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

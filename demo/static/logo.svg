@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="126.15664mm"
+   height="34.354492mm"
+   viewBox="0 0 126.15664 34.354492"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <rect
+       x="70.789528"
+       y="208.03455"
+       width="602.43335"
+       height="388.62006"
+       id="rect1" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-50.602595,-67.880569)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text1"
+       style="font-size:192px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';text-align:end;white-space:pre;shape-inside:url(#rect1);fill:#000000"><tspan
+         x="178.41016"
+         y="384.52523"
+         id="tspan2">Kmdb</tspan></text>
+  </g>
+</svg>

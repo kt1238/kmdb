@@ -1,0 +1,25 @@
+/* Refers to parent anchor tag */
+a:has(h1) {
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    :hover{
+        transform: rotate(1deg);
+        text-shadow: -3px 5px 17px #000000;
+    }
+}
+
+a:has(img) {
+    :hover{
+        filter: blur(1px);
+        transform: rotate(-1deg);
+    }
+}
+
+section {
+    min-height:50vh;
+}
+
+table a {
+    color:black;
+}

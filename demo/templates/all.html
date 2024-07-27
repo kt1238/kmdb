@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+
+{% block title %}All{% endblock %}
+
+{% block content%}
+    <h2 class="text-center">All Movies</h2>
+    <table class="table table-hover">
+        <tr>
+            <th>Movie ID</th>
+            <th>Name</th>
+            <th>Release Year</th>
+            <th>Language</th>
+            <th>Genre</th>
+            <th>Watched</th>
+            <th>Priority</th>
+            <th>Extra Info</th>
+        </tr>
+        {% for record in records%}
+        <tr>
+            <td>{{record.movie_id}}</td>
+            <td><a href="{% url 'details' record.movie_id %}">{{record.name}}</a></td>
+            <td>{{record.release_year}}</td>
+            <td>{{record.language}}</td>
+            <td>{{record.genre_1}}</td>
+            <td>{{record.watched}}</td>
+            <td>{{record.priority}}</td>
+            <td>{{record.extra_info}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
