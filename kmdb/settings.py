@@ -20,13 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!&tuuiy!+k13$)rrv775h5%et1u$)+fe%0)zfqs&^+hkcbsdnd'
+with open("C:/Users/Kevin/Desktop/Websites/DjangoKeys/kmdb.txt") as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 # Application definition
 
