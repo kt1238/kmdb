@@ -6,7 +6,8 @@ import random
 
 # Create your views here.
 def home(request):
-    loadcsvfile()
+    # This should only be run on first time loading from csv files
+    # loadcsvfile()
     return render(request, 'home.html')
 
 def all(request):
