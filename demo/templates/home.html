@@ -11,8 +11,8 @@
 </head>
 <body>
     <header class="container-fluid d-flex justify-content-center border-bottom">
-        <a href="{% url 'home'%}"><img src="{% static 'logo.svg' %}" alt="KMDb logo" height="200" width="200"></a>
-        <a href="{% url 'home'%}"><h1 class="p-5">Kevin's<br>Movie<br>Database</h1></a>
+        <a href="{% url 'home'%}" class="logo"><img src="{% static 'logo.svg' %}" alt="KMDb logo" height="200" width="200"></a>
+        <a href="{% url 'home'%}" class="title"><h1 class="p-5">Kevin's<br>Movie<br>Database</h1></a>
     </header>
     <section class="container-fluid mt-5">
     {% block content %}
@@ -25,7 +25,7 @@
             <form action="{% url 'search' %}" method="post" class="input-group mb-3 w-50">
             {% csrf_token %}
             <input type="text" name="search_term" class="form-control" placeholder="E.g. Ad Astra, 1960, War " aria-describedby="search-button">
-            <button class="btn btn-outline-secondary" type="button" id="search-button">Search</button>
+            <button class="btn btn-outline-dark" type="button" id="search-button">Search</button>
             </form>
         </div>
         <a class="btn btn-outline-dark btn-lg d-block my-5" href="{% url 'all' %}">Full List of Movies</a>

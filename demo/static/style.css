@@ -1,19 +1,19 @@
-/* Refers to parent anchor tag */
-a:has(h1) {
-    color: black;
+.title {
+    color: rgb(12, 5, 5);
     text-transform: uppercase;
     text-decoration: none;
-    :hover{
-        transform: rotate(1deg);
-        text-shadow: -3px 5px 17px #000000;
-    }
+    transition: all 0.5s;
 }
 
-a:has(img) {
-    :hover{
-        filter: blur(1px);
-        transform: rotate(-1deg);
-    }
+.title:hover{
+    transform: scale(1.05,1.05);
+}
+
+.logo {
+    transition: all 0.5s;
+}
+.logo:hover{
+    transform: scale(1.05,1.05);
 }
 
 section {
