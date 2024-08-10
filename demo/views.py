@@ -6,19 +6,17 @@ import random
 
 # Create your views here.
 def home(request):
-    # This should only be run on first time loading from csv files
-    # loadcsvfile()
     return render(request, 'home.html')
 
 def all(request):
-    records = Movie.objects.all()
+    movies = Movie.objects.all()
     context = {
-        'records':records
+        'movies':movies
     }
     return render(request,'all.html',context)
 
-def details(request,movie_id):
-    movie = Movie.objects.get(pk=movie_id)
+def details(request,id):
+    movie = Movie.objects.get(id = id)
     context = {
         'movie': movie
     }
@@ -41,5 +39,5 @@ def search(request):
     return render(request,'search.html',context)
 
 def random_movie(request):
-    id = random.randint(1,1253)
+    id = random.randint(1,Movie.objects.count())
     return details(request,id)

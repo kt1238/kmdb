@@ -15,16 +15,16 @@
             <th>Priority</th>
             <th>Extra Info</th>
         </tr>
-        {% for record in records%}
+        {% for movie in movies%}
         <tr>
-            <td>{{record.movie_id}}</td>
-            <td><a href="{% url 'details' record.movie_id %}">{{record.name}}</a></td>
-            <td>{{record.release_year}}</td>
-            <td>{{record.language}}</td>
-            <td>{{record.genre_1}}</td>
-            <td>{{record.watched}}</td>
-            <td>{{record.priority}}</td>
-            <td>{{record.extra_info}}</td>
+            <td>{{movie.id}}</td>
+            <td><a href="{% url 'details' movie.id %}">{{movie.name}}</a></td>
+            <td>{{movie.release_year}}</td>
+            <td>{{movie.language}}</td>
+            <td>{{movie.genre_1}}</td>
+            <td>{{movie.watched}}</td>
+            <td>{{movie.priority}}</td>
+            <td>{{movie.extra_info}}</td>
         </tr>
         {% endfor %}
     </table>

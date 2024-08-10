@@ -16,6 +16,10 @@
     </header>
     <section class="container-fluid mt-5">
     {% block content %}
+        <h2 class="text-center">Add a movie.</h2>
+        <div class="d-flex justify-content-center">
+            <a href="/admin/demo/movie/add/" class="btn btn-outline-dark m-1">Add</a>
+        </div>
         <h2 class="text-center">Choose a movie.</h2>
         <div class="d-flex justify-content-center">
             <a href="{% url 'random' %}" id="random"><button type="button" class="btn btn-outline-dark m-1">Random</button></a>
