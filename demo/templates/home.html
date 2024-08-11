@@ -28,8 +28,8 @@
         <div class="container-fluid d-flex justify-content-center">
             <form action="{% url 'search' %}" method="post" class="input-group mb-3 w-50">
             {% csrf_token %}
-            <input type="text" name="search_term" class="form-control" placeholder="E.g. Ad Astra, 1960, War " aria-describedby="search-button">
-            <button class="btn btn-outline-dark" type="button" id="search-button">Search</button>
+            <input type="text" name="search_term" required class="form-control" placeholder="E.g. Ad Astra, 1960, War" aria-describedby="search-button">
+            <button class="btn btn-outline-dark" type="submit" id="search-button">Search</button>
             </form>
         </div>
         <a class="btn btn-outline-dark btn-lg d-block my-5" href="{% url 'all' %}">Full List of Movies</a>
