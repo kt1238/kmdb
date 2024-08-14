@@ -1,14 +1,19 @@
+import random
 from django.shortcuts import render
 from django.http import HttpResponse
-from load import loadcsvfile
-from demo.models import Movie
-import random
+from .models import Movie
+from django.views import generic
+
 
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
 
+class MovieView(generic.list.ListView):
+    model = Movie
+    template_name = 'all.html'
+    context_object_name = 'movies'
 
 def all(request):
     movies = Movie.objects.all()
