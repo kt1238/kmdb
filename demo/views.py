@@ -5,22 +5,15 @@ from .models import Movie
 from django.views import generic
 
 
-
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
+
 
 class MovieView(generic.list.ListView):
     model = Movie
     template_name = 'all.html'
     context_object_name = 'movies'
-
-def all(request):
-    movies = Movie.objects.all()
-    context = {
-        'movies': movies
-    }
-    return render(request, 'all.html', context)
 
 
 def details(request, id):
