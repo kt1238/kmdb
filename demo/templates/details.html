@@ -4,7 +4,16 @@
 
 {% block content%}
     <h2 class="text-center">{{movie.name}} ({{movie.release_year|default:"Year Not Found"}})</h2>
-    <img src="" alt="Movie poster" class="mx-auto d-block w-50 img-thumbnail">
+    {% if omdb_data %}
+        <img src="{{omdb_data.Poster}}" alt="Movie poster" class="mx-auto d-block w-50 img-thumbnail" {% if omdb_data.Poster == 'N/A' %}style="display:none;"{% endif %}>
+        <p class="text-center">
+            <strong>IMDb ID:</strong> {{omdb_data.imdbID}} <br>
+            <strong>Plot:</strong> {{omdb_data.Plot|default:"No plot found"}} <br>
+            <strong>IMDb Rating:</strong> {{omdb_data.imdbRating|default:"N/A"}}/10 <br>
+        </p>
+    {% else %}
+        <p class="text-center text-muted">OMDb API data unavailable</p>
+    {% endif %}
     <p class="text-center">
     Language: {{movie.language}} <br>
     Genres: {{movie.genre_1|default:"No genres found"}} <br>

@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Movie
 from django.views import generic
+from .omdb_client import get_movie_info
 
 
 # Create your views here.
@@ -18,8 +19,11 @@ class MovieView(generic.list.ListView):
 
 def details(request, id):
     movie = Movie.objects.get(id=id)
+    # Fetch additional info from OMDb API
+    omdb_data = get_movie_info(movie.name)
     context = {
-        'movie': movie
+        'movie': movie,
+        'omdb_data': omdb_data
     }
     return render(request, 'details.html', context)
 
